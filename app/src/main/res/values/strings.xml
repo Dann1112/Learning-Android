@@ -5,5 +5,7 @@
     <string name="testToggleButton">Test Toggle Button</string>
     <string name="textView">Your Name Here</string>
     <string name="testTextView">Test Text View</string>
-    <string name="hintList">What you submit above, goes here...</string>
+    <string name="hintList">What you submit above, goes here</string>
+    <string name="typeName">Type your name here</string>
+    <string name="sayHi">Say Hi</string>
 </resources>

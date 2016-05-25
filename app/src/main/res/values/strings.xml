@@ -8,4 +8,5 @@
     <string name="hintList">What you submit above, goes here</string>
     <string name="typeName">Type your name here</string>
     <string name="sayHi">Say Hi</string>
+    <string name="nextActivity">Next Activity</string>
 </resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestingAndroid</string>
+    <string name="toggleTestOff">Off</string>
+    <string name="toggleTestOn">On</string>
+    <string name="testToggleButton">Test Toggle Button</string>
+    <string name="textView">Your Name Here</string>
+    <string name="testTextView">Test Text View</string>
+    <string name="hintList">What you submit above, goes here...</string>
+</resources>

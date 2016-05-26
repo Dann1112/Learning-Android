@@ -10,7 +10,7 @@
         android:id="@+id/autoTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:orientation="horizontal">
 
         <AutoCompleteTextView
@@ -26,11 +26,11 @@
             />
 
         <Button
-            android:id="@+id/testAutoComplete"
+            android:id="@+id/sayHello"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:background="@color/colorAccentDark"
+            android:background="@color/colorPrimary"
             android:onClick="sayHi"
             android:text="@string/sayHi"
             android:textColor="@color/white" />
@@ -43,13 +43,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/autoTextLayout"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimaryDark"
+            android:paddingBottom="15dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
 
+            android:paddingTop="15dp">
         </Spinner>
 
 

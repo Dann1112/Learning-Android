@@ -7,11 +7,14 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class SecondActivity extends AppCompatActivity {
 
     private Button autoTextBtn;
     private AutoCompleteTextView autoTxt;
-    private String text;
+    private ArrayList<String> text;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,18 +23,9 @@ public class SecondActivity extends AppCompatActivity {
 
     }
 
-    private void autoTextListener(View view) {
-        autoTextBtn = (Button) findViewById(R.id.testAutoComplete);
-        autoTextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                autoTxt = (AutoCompleteTextView) findViewById(R.id.autoComplete);
-
-                if (autoTxt.toString() != null || autoTxt.toString().equals(""))
-                    Toast.makeText(null, "Hi " + autoTxt.getText(), Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
+    public void sayHi(View v) {
+        autoTxt = (AutoCompleteTextView) findViewById(R.id.autoComplete);
+        text.add(String.valueOf(autoTxt.getText()));
+        Toast.makeText(SecondActivity.this, "Hi " + String.valueOf(autoTxt.getText()), Toast.LENGTH_SHORT).show();
     }
 }

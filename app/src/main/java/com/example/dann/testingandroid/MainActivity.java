@@ -1,10 +1,12 @@
 package com.example.dann.testingandroid;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -18,7 +20,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView viewTxt, viewList;
     private ArrayList<String> data = new ArrayList<>();
     private StringBuffer list;
+    private RadioGroup theme;
     private int color;
+
+    private View back;
 
 
     @Override
@@ -29,7 +34,53 @@ public class MainActivity extends AppCompatActivity {
         textListListener();
         toggleBtnListener();
         toggleListener();
+    }
 
+    public void radioListener(View v) {
+        switch (v.getId()) {
+            case R.id.radioGreen:
+                back = findViewById(R.id.radioGreen);
+                back.setBackgroundColor(Color.GREEN);
+                back = findViewById(R.id.radioBlue);
+                back.setBackgroundColor(0x00000000);
+                back = findViewById(R.id.radioYellow);
+                back.setBackgroundColor(0x00000000);
+                back = findViewById(R.id.radioRed);
+                back.setBackgroundColor(0x00000000);
+                break;
+            case R.id.radioBlue:
+                back = findViewById(R.id.radioBlue);
+                back.setBackgroundColor(Color.BLUE);
+                back = findViewById(R.id.radioYellow);
+                back.setBackgroundColor(0x00000000);
+                back = findViewById(R.id.radioRed);
+                back.setBackgroundColor(0x00000000);
+                back = findViewById(R.id.radioGreen);
+                back.setBackgroundColor(0x00000000);
+                break;
+            case R.id.radioYellow:
+                back = findViewById(R.id.radioYellow);
+                back.setBackgroundColor(Color.YELLOW);
+                back = findViewById(R.id.radioBlue);
+                back.setBackgroundColor(0x00000000);
+                back = findViewById(R.id.radioRed);
+                back.setBackgroundColor(0x00000000);
+                back = findViewById(R.id.radioGreen);
+                back.setBackgroundColor(0x00000000);
+                break;
+            case R.id.radioRed:
+                back = findViewById(R.id.radioRed);
+                back.setBackgroundColor(Color.RED);
+                back = findViewById(R.id.radioYellow);
+                back.setBackgroundColor(0x00000000);
+                back = findViewById(R.id.radioBlue);
+                back.setBackgroundColor(0x00000000);
+                back = findViewById(R.id.radioGreen);
+                back.setBackgroundColor(0x00000000);
+                break;
+            default:
+                test("Wrong");
+        }
     }
 
     public void toggleListener() {

@@ -9,4 +9,9 @@
     <string name="typeName">Type your name here</string>
     <string name="sayHi">Say Hi</string>
     <string name="nextActivity">Next Activity</string>
+    <string name="green">Green</string>
+    <string name="yellow">Yellow</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="themes">Select your favorite theme:</string>
 </resources>

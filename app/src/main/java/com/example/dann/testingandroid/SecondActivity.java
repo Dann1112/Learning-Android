@@ -2,7 +2,6 @@ package com.example.dann.testingandroid;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -19,10 +18,9 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
 
-        autoTextListener();
     }
 
-    private void autoTextListener() {
+    private void autoTextListener(View view) {
         autoTextBtn = (Button) findViewById(R.id.testAutoComplete);
         autoTextBtn.setOnClickListener(new View.OnClickListener() {
             @Override

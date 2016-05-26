@@ -1,22 +1,24 @@
 package com.example.dann.testingandroid;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button actionButton;
     private ToggleButton toggleBtn;
     private TextView viewTxt, viewList;
-    private ArrayList<String> data;
-    private Iterator<String> iter;
+    private ArrayList<String> data = new ArrayList<>();
+    private StringBuffer list;
+    private int color;
 
 
     @Override
@@ -24,12 +26,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toggleListener();
         textListListener();
+        toggleBtnListener();
+        toggleListener();
 
     }
 
-    private void textListListener() {
+    public void toggleListener() {
+
+        toggleBtn = (ToggleButton) findViewById(R.id.toggleButton);
+
+        toggleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (toggleBtn.isChecked())
+                    setUI(true);
+                else setUI(false);
+            }
+        });
+
+
+    }
+
+    public void textListListener() {
 
         viewTxt = (TextView) findViewById(R.id.textView);
         actionButton = (Button) findViewById(R.id.testTextView);
@@ -43,14 +62,16 @@ public class MainActivity extends AppCompatActivity {
                 list.append(viewList.getText()).append("\n").append(viewTxt.getText());
                 viewList.setText(list);*/
 
-                data = new ArrayList<>();
+                list = new StringBuffer();
 
-                if (viewTxt != null || viewTxt.getText().equals(""))
-                    data.add((String) viewTxt.getText());
+                if (viewTxt != null || String.valueOf(viewTxt.getText()).equals(""))
+                    data.add(String.valueOf(viewTxt.getText()));
 
-                for (iter = data.iterator(); iter.hasNext(); iter.next()) {
-                    viewList.setText(iter.toString() + "\n");
+                for (int cont = 0; cont < data.size(); cont++) {
+                    list.append(data.get(cont) + "\n");
                 }
+
+                viewList.setText(list);
 
             }
         });
@@ -58,8 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    private void toggleListener() {
+    public void toggleBtnListener() {
         toggleBtn = (ToggleButton) findViewById(R.id.toggleButton);
         actionButton = (Button) findViewById(R.id.testToggleButton);
 
@@ -69,20 +89,39 @@ public class MainActivity extends AppCompatActivity {
 
                 toggleBtn.toggle();
 
-                if(!toggleBtn.isChecked())
-                    disableUI();
+                if (!toggleBtn.isChecked()) {
+                    Toast.makeText(MainActivity.this, "We are OFF!!", Toast.LENGTH_SHORT).show();
+                    color = R.color.colorPrimaryLight;
+
+                    setUI(false);
+                    toggleBtn.setBackgroundColor(color);
+                    Log.v("Color Desactivado: ", String.valueOf(color));
+
+                } else {
+                    Toast.makeText(MainActivity.this, "We are ON!!", Toast.LENGTH_SHORT).show();
+                    color = R.color.colorPrimaryDark;
+                    setUI(true);
+                    Log.v("Color Activado: ", String.valueOf(color));
+                    toggleBtn.setBackgroundColor(color);
+                }
+
 
             }
         });
     }
 
-    private void disableUI() {
+    private void setUI(boolean isOn) {
         viewTxt = (TextView) findViewById(R.id.textView);
         actionButton = (Button) findViewById(R.id.testTextView);
         viewList = (TextView) findViewById(R.id.list);
 
-        viewTxt.setEnabled(false);
-        actionButton.setEnabled(false);
-        viewList.setEnabled(false);
+        viewTxt.setEnabled(isOn);
+        actionButton.setEnabled(isOn);
+        viewList.setEnabled(isOn);
     }
+
+    private void test(String what) {
+        Toast.makeText(MainActivity.this, what, Toast.LENGTH_SHORT).show();
+    }
+
 }

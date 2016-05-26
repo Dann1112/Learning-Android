@@ -20,7 +20,7 @@
             android:layout_weight="1"
             android:hint="@string/typeName"
             android:inputType="textPersonName"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
             android:textColorHint="@color/white"
 
             />

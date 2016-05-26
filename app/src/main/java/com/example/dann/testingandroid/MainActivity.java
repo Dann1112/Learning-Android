@@ -1,5 +1,6 @@
 package com.example.dann.testingandroid;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public final static String EXTRA_MESSAGE = "com.example.dann.testingandroid.MESSAGE";
+    Intent intent;
     private Button actionButton;
     private ToggleButton toggleBtn;
     private TextView viewTxt, viewList;
@@ -22,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private StringBuffer list;
     private RadioGroup theme;
     private int color;
-
     private View back;
+    private View v;
 
 
     @Override
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         textListListener();
         toggleBtnListener();
         toggleListener();
+        nextActivityListener(v);
     }
 
     public void radioListener(View v) {
@@ -173,6 +177,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void test(String what) {
         Toast.makeText(MainActivity.this, what, Toast.LENGTH_SHORT).show();
+    }
+
+    public void nextActivityListener(View v) {
+        Button next = (Button) findViewById(R.id.nextActivity);
+        intent = new Intent(this, SecondActivity.class);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(intent);
+            }
+        });
+
+
     }
 
 }

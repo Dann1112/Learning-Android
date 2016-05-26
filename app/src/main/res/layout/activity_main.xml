@@ -221,10 +221,11 @@
         android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/changeActivity"
+            android:id="@+id/nextActivity"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
+            android:onClick="nextActivityListener"
             android:text="@string/nextActivity" />
 
     </LinearLayout>

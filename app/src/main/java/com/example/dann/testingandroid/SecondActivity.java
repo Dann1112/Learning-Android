@@ -13,7 +13,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private Button autoTextBtn;
     private AutoCompleteTextView autoTxt;
-    private ArrayList<String> text;
+    private ArrayList<String> text = new ArrayList<>();
     private String name;
 
     @Override
@@ -25,7 +25,12 @@ public class SecondActivity extends AppCompatActivity {
 
     public void sayHi(View v) {
         autoTxt = (AutoCompleteTextView) findViewById(R.id.autoComplete);
-        text.add(String.valueOf(autoTxt.getText()));
-        Toast.makeText(SecondActivity.this, "Hi " + String.valueOf(autoTxt.getText()), Toast.LENGTH_SHORT).show();
+        name = String.valueOf(autoTxt.getText());
+
+        if (autoTxt != null && name != "") {
+            text.add(String.valueOf(autoTxt.getText()));
+            Toast.makeText(SecondActivity.this, "Hi " + name + " !", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(SecondActivity.this, "Sorry", Toast.LENGTH_SHORT).show();
     }
 }

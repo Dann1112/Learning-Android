@@ -18,4 +18,5 @@
     <string name="allCaps">ALL CAPS</string>
     <string name="noCaps">no caps</string>
     <string name="typeWords">Type random words</string>
+    <string name="testMe">Test me with short and long clicks</string>
 </resources>

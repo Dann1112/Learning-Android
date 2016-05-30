@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private Button sayHi, style;
+    private Button btn;
     private EditText randWords;
     private AutoCompleteTextView autoTxt;
     private ArrayList<String> text = new ArrayList<>();
@@ -30,6 +30,7 @@ public class SecondActivity extends AppCompatActivity {
     private String[] lang = {"Spanish", "English", "French"};
     private RelativeLayout layout;
     private PopupMenu popup;
+    private View v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +39,16 @@ public class SecondActivity extends AppCompatActivity {
 
         populateSpinner();
         styleListener();
+        testClicks(v);
 
     }
 
     private void styleListener() {
-        style = (Button) findViewById(R.id.styleButton);
+        btn = (Button) findViewById(R.id.styleButton);
         randWords = (EditText) findViewById(R.id.randomWords);
-        popup = new PopupMenu(SecondActivity.this, style);
+        popup = new PopupMenu(SecondActivity.this, btn);
         popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-        style.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -70,6 +72,25 @@ public class SecondActivity extends AppCompatActivity {
                 );
                 popup.show();
 
+            }
+        });
+
+
+    }
+
+    public void testClicks(View v) {
+        btn = (Button) findViewById(R.id.testClicks);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SecondActivity.this, "Short Click", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btn.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(SecondActivity.this, "Long Click", Toast.LENGTH_LONG).show();
+                return true;
             }
         });
 
@@ -118,16 +139,16 @@ public class SecondActivity extends AppCompatActivity {
         spnr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sayHi = (Button) findViewById(R.id.sayHello);
+                btn = (Button) findViewById(R.id.sayHello);
                 switch (position) {
                     case 0:
-                        sayHi.setText("Hola ");
+                        btn.setText("Hola ");
                         break;
                     case 1:
-                        sayHi.setText("Hi ");
+                        btn.setText("Hi ");
                         break;
                     case 2:
-                        sayHi.setText("Salut ");
+                        btn.setText("Salut ");
                         break;
                 }
 
@@ -144,11 +165,11 @@ public class SecondActivity extends AppCompatActivity {
     public void sayHi(View v) {
         autoTxt = (AutoCompleteTextView) findViewById(R.id.autoComplete);
         name = String.valueOf(autoTxt.getText());
-        sayHi = (Button) findViewById(R.id.sayHello);
+        btn = (Button) findViewById(R.id.sayHello);
 
         if (autoTxt != null && !name.equals("")) {
             text.add(String.valueOf(autoTxt.getText()));
-            Toast.makeText(SecondActivity.this, sayHi.getText() + name + " !", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SecondActivity.this, btn.getText() + name + " !", Toast.LENGTH_SHORT).show();
 
         } else
             Toast.makeText(SecondActivity.this, "Sorry", Toast.LENGTH_SHORT).show();

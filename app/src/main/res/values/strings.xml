@@ -19,4 +19,12 @@
     <string name="noCaps">no caps</string>
     <string name="typeWords">Type random words</string>
     <string name="testMe">Test me with short and long clicks</string>
+
+    <string-array name="namesArray">
+        <item>Daniel</item>
+        <item>Juan</item>
+        <item>John</item>
+        <item>Michael</item>
+        <item>Carl</item>
+    </string-array>
 </resources>

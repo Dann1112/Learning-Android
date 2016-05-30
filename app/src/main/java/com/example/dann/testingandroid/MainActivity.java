@@ -25,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private StringBuffer list;
     private RadioGroup theme;
     private int color;
-    private View back;
-    private View v;
+    private View back, v;
 
 
     @Override
@@ -39,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         toggleListener();
         nextActivityListener(v);
     }
+
 
     public void radioListener(View v) {
         switch (v.getId()) {
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 back.setBackgroundColor(0x00000000);
                 break;
             default:
-                test("Wrong");
+                Toast.makeText(MainActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -173,10 +173,6 @@ public class MainActivity extends AppCompatActivity {
         viewTxt.setEnabled(isOn);
         actionButton.setEnabled(isOn);
         viewList.setEnabled(isOn);
-    }
-
-    private void test(String what) {
-        Toast.makeText(MainActivity.this, what, Toast.LENGTH_SHORT).show();
     }
 
     public void nextActivityListener(View v) {

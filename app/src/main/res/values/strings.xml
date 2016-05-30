@@ -13,5 +13,6 @@
     <string name="yellow">Yellow</string>
     <string name="red">Red</string>
     <string name="blue">Blue</string>
+    <string name="def">Default</string>
     <string name="themes">Select your favorite color:</string>
 </resources>

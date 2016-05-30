@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SecondActivity">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/menu_backRed"
+            android:orderInCategory="1"
+            android:title="@string/red"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/menu_backYellow"
+            android:orderInCategory="2"
+            android:title="@string/yellow"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/menu_backGreen"
+            android:orderInCategory="3"
+            android:title="@string/green"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/menu_backDefault"
+            android:orderInCategory="4"
+            android:title="@string/def"
+            app:showAsAction="never" />
+
+    </group>
+
+</menu>

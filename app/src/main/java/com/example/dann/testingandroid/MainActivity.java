@@ -93,9 +93,13 @@ public class MainActivity extends AppCompatActivity {
         toggleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (toggleBtn.isChecked())
+                if (toggleBtn.isChecked()) {
                     setUI(true);
-                else setUI(false);
+                    toggleBtn.setContentDescription("@string/on");
+                } else {
+                    setUI(false);
+                    toggleBtn.setContentDescription("@string/off");
+                }
             }
         });
 

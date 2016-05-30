@@ -1,113 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/activity2GralLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccentLight"
-    android:padding="30dp">
+    android:orientation="vertical"
 
-    <LinearLayout
-        android:id="@+id/autoTextLayout"
+    >
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_weight="3">
 
-        <AutoCompleteTextView
-            android:id="@+id/autoComplete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/typeName"
-            android:inputType="textPersonName"
-            android:textColor="@color/colorPrimary"
-            android:textColorHint="@color/white"
-
-            />
-
-        <Button
-            android:id="@+id/sayHello"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:background="@color/colorPrimary"
-            android:onClick="sayHi"
-            android:text="@string/sayHi"
-            android:textColor="@color/white" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/spinnerLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/autoTextLayout"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingBottom="15dp"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
-
-            android:paddingTop="15dp">
-        </Spinner>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/popupLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinnerLayout"
-        android:layout_marginBottom="20dp">
-
-        <EditText
-            android:id="@+id/randomWords"
+        <RelativeLayout
+            android:id="@+id/contentActivity2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
-            android:hint="@string/typeWords"
-            android:inputType="textPersonName"
-            android:textColor="@color/colorPrimary"
-            android:textColorHint="@color/white" />
 
-        <Button
-            android:id="@+id/styleButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:background="@color/colorPrimaryDark"
-            android:text="Style"
-            android:textColor="@color/white" />
+            android:padding="30dp">
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/autoTextLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/typeName"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/white"
+
+                    />
+
+                <Button
+                    android:id="@+id/sayHello"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@color/colorPrimary"
+                    android:onClick="sayHi"
+                    android:text="@string/sayHi"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/spinnerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/autoTextLayout"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+
+                    android:paddingTop="15dp"></Spinner>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/popupLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinnerLayout"
+                android:layout_marginBottom="20dp">
+
+                <EditText
+                    android:id="@+id/randomWords"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:hint="@string/typeWords"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/white" />
+
+                <Button
+                    android:id="@+id/styleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Style"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/clcksLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/popupLayout"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/testClicks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:onClick="testClicks"
+                    android:text="@string/testMe"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
 
     <LinearLayout
-        android:id="@+id/clcksLayout"
+        android:id="@+id/nextActivityLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/popupLayout"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/testClicks"
-            android:layout_width="wrap_content"
+            android:id="@+id/nextActivity2"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:onClick="testClicks"
-            android:text="@string/testMe"
-            android:textColor="@color/white" />
+            android:background="@color/colorAccent"
+            android:onClick="nextActivityListener"
+            android:text="@string/nextActivity" />
 
     </LinearLayout>
-
-
-</RelativeLayout>
+</LinearLayout>

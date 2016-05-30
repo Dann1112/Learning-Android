@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private StringBuffer list;
     private RadioGroup theme;
     private int color;
-    private View back, v;
+    private View back;
 
 
     @Override
@@ -36,9 +36,8 @@ public class MainActivity extends AppCompatActivity {
         textListListener();
         toggleBtnListener();
         toggleListener();
-        nextActivityListener(v);
+        nextActivityListener();
     }
-
 
     public void radioListener(View v) {
         switch (v.getId()) {
@@ -175,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         viewList.setEnabled(isOn);
     }
 
-    public void nextActivityListener(View v) {
+    public void nextActivityListener() {
         Button next = (Button) findViewById(R.id.nextActivity);
         intent = new Intent(this, SecondActivity.class);
 

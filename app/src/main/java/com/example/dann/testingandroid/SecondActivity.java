@@ -1,5 +1,6 @@
 package com.example.dann.testingandroid;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,8 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -28,9 +29,9 @@ public class SecondActivity extends AppCompatActivity {
     private Spinner spnr;
     private ArrayAdapter<String> adapt;
     private String[] lang = {"Spanish", "English", "French"};
-    private RelativeLayout layout;
+    private LinearLayout layout;
     private PopupMenu popup;
-    private View v;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,8 @@ public class SecondActivity extends AppCompatActivity {
 
         populateSpinner();
         styleListener();
-        testClicks(v);
+        testClicks();
+        nextActivityListener();
 
     }
 
@@ -78,7 +80,7 @@ public class SecondActivity extends AppCompatActivity {
 
     }
 
-    public void testClicks(View v) {
+    public void testClicks() {
         btn = (Button) findViewById(R.id.testClicks);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +107,7 @@ public class SecondActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        layout = (RelativeLayout) findViewById(R.id.activity2GralLayout);
+        layout = (LinearLayout) findViewById(R.id.activity2GralLayout);
         switch (item.getOrder()) {
             case 1:
                 layout.setBackgroundColor(Color.RED);
@@ -173,5 +175,20 @@ public class SecondActivity extends AppCompatActivity {
 
         } else
             Toast.makeText(SecondActivity.this, "Sorry", Toast.LENGTH_SHORT).show();
+    }
+
+    public void nextActivityListener() {
+        Button next = (Button) findViewById(R.id.nextActivity2);
+        intent = new Intent(this, ThirdActivity.class);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

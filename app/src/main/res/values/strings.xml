@@ -15,4 +15,7 @@
     <string name="blue">Blue</string>
     <string name="def">Default</string>
     <string name="themes">Select your favorite color:</string>
+    <string name="allCaps">ALL CAPS</string>
+    <string name="noCaps">no caps</string>
+    <string name="typeWords">Type random words</string>
 </resources>

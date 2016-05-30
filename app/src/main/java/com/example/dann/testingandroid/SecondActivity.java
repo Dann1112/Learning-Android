@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -18,7 +20,8 @@ import java.util.ArrayList;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private Button sayHi;
+    private Button sayHi, style;
+    private EditText randWords;
     private AutoCompleteTextView autoTxt;
     private ArrayList<String> text = new ArrayList<>();
     private String name;
@@ -26,6 +29,7 @@ public class SecondActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapt;
     private String[] lang = {"Spanish", "English", "French"};
     private RelativeLayout layout;
+    private PopupMenu popup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,42 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_2);
 
         populateSpinner();
+        styleListener();
+
+    }
+
+    private void styleListener() {
+        style = (Button) findViewById(R.id.styleButton);
+        randWords = (EditText) findViewById(R.id.randomWords);
+        popup = new PopupMenu(SecondActivity.this, style);
+        popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+        style.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                                                     @Override
+                                                     public boolean onMenuItemClick(MenuItem item) {
+                                                         switch (item.getOrder()) {
+                                                             case 1:
+                                                                 randWords.setText(randWords.getText().toString().toUpperCase());
+                                                                 return true;
+                                                             case 2:
+                                                                 randWords.setText(randWords.getText().toString().toLowerCase());
+                                                                 return true;
+                                                             default:
+                                                                 return true;
+                                                         }
+
+                                                     }
+                                                 }
+                );
+                popup.show();
+
+            }
+        });
+
 
     }
 

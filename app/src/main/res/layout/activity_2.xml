@@ -10,7 +10,6 @@
         android:id="@+id/autoTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
         android:orientation="horizontal">
 
         <AutoCompleteTextView
@@ -43,6 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/autoTextLayout"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -51,7 +51,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/colorPrimaryDark"
             android:paddingBottom="15dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
@@ -59,6 +58,34 @@
             android:paddingTop="15dp">
         </Spinner>
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/popupLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerLayout">
+
+        <EditText
+            android:id="@+id/randomWords"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:hint="@string/typeWords"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/white" />
+
+        <Button
+            android:id="@+id/styleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@color/colorPrimaryDark"
+            android:text="Style"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
